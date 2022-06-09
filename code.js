@@ -1,3 +1,5 @@
+// testing dif in branches 
+
 function getRndInteger() {
   return Math.floor(Math.random() * (3 - 0)) + 0;
 }
