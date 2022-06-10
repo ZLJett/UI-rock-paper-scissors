@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "roboto", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header, .footer {
+  background-color: #1F2937;
+}
+
+/*Header and Footer*/
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 36px;
+}
+
+.page-title {
+  color: #f9faf8;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #f9faf8;
+  font-size: 16px;
+  padding: 24px;
+}
