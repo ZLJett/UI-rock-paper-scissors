@@ -29,8 +29,25 @@ body {
 
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   color: #f9faf8;
   font-size: 16px;
-  padding: 24px;
+  padding: 24px 36px;
+}
+
+.credit-details {
+  display: flex;
+  justify-content:space-between;
+}
+
+.credit-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+
+.credit-links a {
+  color: #f9faf8;
 }
