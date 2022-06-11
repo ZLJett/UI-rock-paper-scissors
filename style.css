@@ -60,12 +60,12 @@ body {
   align-items: center;
 }
 
-/*.new-game {
-  margin: 24px;
-}*/
+.new-game {
+  margin-bottom: 24px;
+}
 
 .game-info {
-  margin: 24px;
+  margin-bottom: 24px;
   display: flex;
   gap: 8px;
 }
@@ -74,4 +74,21 @@ body {
   border: blue solid;
   padding: 8px;
   text-align: center;
+}
+
+.display {
+  border: blue solid;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  height: 52px;
+  width: 250px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-content {
+  font-size: 18px;
+  font-weight: bold;
 }
