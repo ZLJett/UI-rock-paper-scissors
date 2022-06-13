@@ -54,7 +54,6 @@ body {
 /*Body*/
 
 .center-content {
-  border: blue solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,4 +128,19 @@ img {
   height: auto;
   width: 250px;
   max-height: 166px;
+}
+
+.make-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selection-title {
+  margin-bottom: 8px;
+}
+
+.selection-buttons {
+  display: flex;
+  gap: 22px;
 }
