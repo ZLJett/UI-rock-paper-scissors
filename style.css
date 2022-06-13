@@ -92,3 +92,34 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+
+.play-round {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.selection-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 250px;
+  min-height: 193px;
+  border: black solid;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.card-title {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+img {
+  height: auto;
+  width: 250px;
+  max-height: 166px;
+}
