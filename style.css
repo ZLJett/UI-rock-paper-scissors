@@ -71,13 +71,16 @@ body {
 }
 
 .info-card {
-  border: blue solid;
   padding: 8px;
   text-align: center;
+  border: black solid;
+  background-color: black;
+  border-radius: 10px;
+  color: #f9faf8;
+  font-weight: bold;
 }
 
 .display {
-  border: blue solid;
   margin-bottom: 24px;
   box-sizing: border-box;
   height: 52px;
@@ -86,11 +89,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: black solid;
+  background-color: black;
+  border-radius: 10px;
 }
 
 .display-content {
   font-size: 18px;
   font-weight: bold;
+  color: #f9faf8;
 }
 
 .play-round {
@@ -114,7 +121,7 @@ body {
 .card-title {
   margin-top: 4px;
   margin-bottom: 4px;
-  color: white;
+  color: #f9faf8;
   font-weight: bold;
 }
 
