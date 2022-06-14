@@ -1,9 +1,17 @@
+function playGame() {
+
+
+}
+
+
 function startGame(event) {
-  let displayValue = document.querySelector(".display-content");
-  displayValue.textContent = "Test Test Test";
+  const displayValue = document.querySelector(".display-content");
+  displayValue.textContent = "";
+  startButton.classList.replace("styled", "greyout")
+  startButton.removeEventListener("click", startGame);
+  let gameResult = playGame();
 
   console.log("StartGame End")
-
 }
 
 
