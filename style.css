@@ -10,7 +10,7 @@ body {
 }
 
 .header, .footer {
-  background-color: #1F2937;
+  background-color: #006699;
 }
 
 /*Header and Footer*/
@@ -25,6 +25,7 @@ body {
   color: #f9faf8;
   font-size: 24px;
   font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
 }
 
 .footer {
@@ -33,6 +34,7 @@ body {
   color: #f9faf8;
   font-size: 16px;
   padding: 24px 36px;
+  text-shadow: 1px 1px 1px #000;
 }
 
 .credit-details {
@@ -137,10 +139,44 @@ img {
 }
 
 .selection-title {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-weight: 550;
 }
 
 .selection-buttons {
   display: flex;
   gap: 22px;
+}
+
+.pick-button, .game-button {
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 14px;
+  font-weight: bold;
+  border: #006699 solid;
+  background-color: #006699;
+  border-radius: 5px;
+  padding: 4px 20px;
+  width: 120px;
+}
+
+.game-button {
+  height: 40px;
+  width: 180px;
+}
+
+.styled:hover {
+  background-color: #0082c4;
+}
+
+.styled:active {
+  position: relative;
+  top: 2px;
+}
+
+.greyout {
+  color: grey;
+  text-shadow: unset;
+  background-color: #0066993d;
+  border: #0066993d solid;
 }
