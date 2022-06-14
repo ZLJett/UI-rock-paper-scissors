@@ -150,7 +150,7 @@ img {
 
 .pick-button, .game-button {
   color: white;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 1px rgb(92, 91, 91);
   font-size: 14px;
   font-weight: bold;
   border: #006699 solid;
