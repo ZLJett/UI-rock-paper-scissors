@@ -1,3 +1,24 @@
+function getRndInteger() {
+  return Math.floor(Math.random() * (3 - 0)) + 0;
+}
+
+function computerPlay() {
+  let choice = getRndInteger();
+  let result = "";
+  switch (choice) {
+    case 0:
+      result = "rock";
+      break;
+    case 1:
+      result = "paper";
+      break;
+    case 2:
+      result = "scissors";
+      break;
+  }
+  return result;
+}
+
 function playGame() {
   let playerScore = 0;
   let computerScore = 0;
@@ -11,12 +32,15 @@ function playGame() {
     roundCounter.textContent = currentRound;
     displayValue.textContent = "Make your Selection";
     inputButtons.forEach(button => button.classList.replace("greyout", "styled"));
-    // get player input
+    // get player selection and computer selection
     inputButtons.forEach(button => button.addEventListener("click", event => {
-      playerSelection = event.textContent;
-// TODO: ADD GREYOUT ONCE CAPTURE HAPPENS
+      playerSelection = event.textContent.toLowerCase();
+      inputButtons.forEach(button => button.classList.replace("styled", "greyout"));
       console.log(playerSelection);
     }, { once: true }));
+    let computerSelection = computerPlay();
+
+
 
   }
 
