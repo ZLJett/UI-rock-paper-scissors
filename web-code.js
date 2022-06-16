@@ -40,6 +40,28 @@ function playRound(playerSelection, computerSelection) {
   return resultMessage;
 }
 
+function selectionPic (selection) {
+  let picSrc = "";
+  switch (selection) {
+    case "rock":
+      result = "./images/rock-usgs-unsplash.jpg";
+      break;
+    case "paper":
+      result = "./images/paper-david-maier-unsplash.jpg";
+      break;
+    case "scissors":
+      result = "./images/scissors-matt-artz-unsplash.jpg";
+      break;
+  }
+  return picSrc;
+}
+
+function setPlayerPic(picSrc) {
+  const playerCard = document.querySelector(".player-selection");
+  playerCard.setAttribute("src", picSrc);
+}
+
+
 function playGame() {
   let playerScore = 0;
   let computerScore = 0;
@@ -62,7 +84,16 @@ function playGame() {
     let computerSelection = computerPlay();
     // find winner of round
     let roundResult = playRound(playerSelection, computerSelection);
-    
+    // stager display of selections and round winner
+    let playerPic = selectionPic(playerSelection);
+    let computerPic = selectionPic(computerSelection);
+    setPlayerPic(playerPic);
+
+    // 1, display player pic
+    // 2. display computer function (for delay)
+    // 3. then display winner (with delay to keep next round from starting)
+
+
 
 
 
