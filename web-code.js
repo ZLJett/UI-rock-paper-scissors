@@ -19,6 +19,27 @@ function computerPlay() {
   return result;
 }
 
+function playRound(playerSelection, computerSelection) {
+  let resultMessage = "";
+  switch (true) {
+    case (playerSelection === computerSelection):
+      resultMessage = "tie";
+      break;
+    case (playerSelection === "rock" && computerSelection === "scissors"):
+      resultMessage = "player win";
+      break;
+    case (playerSelection === "paper" && computerSelection === "rock"):
+      resultMessage = "player win";
+      break;
+    case (playerSelection === "scissors" && computerSelection === "paper"):
+      resultMessage = "player win";
+      break;
+    default:
+      resultMessage = "computer win";
+  }
+  return resultMessage;
+}
+
 function playGame() {
   let playerScore = 0;
   let computerScore = 0;
@@ -28,17 +49,20 @@ function playGame() {
     // set up game round
     const roundCounter = document.querySelector(".current-round");
     const inputButtons = document.querySelectorAll(".pick-button");
-    let playerSelection = "";
     roundCounter.textContent = currentRound;
     displayValue.textContent = "Make your Selection";
     inputButtons.forEach(button => button.classList.replace("greyout", "styled"));
-    // get player selection and computer selection
+    // get player selection and computer selection and display choices
+    let playerSelection = "";
     inputButtons.forEach(button => button.addEventListener("click", event => {
       playerSelection = event.textContent.toLowerCase();
       inputButtons.forEach(button => button.classList.replace("styled", "greyout"));
       console.log(playerSelection);
     }, { once: true }));
     let computerSelection = computerPlay();
+    // find winner of round
+    let roundResult = playRound(playerSelection, computerSelection);
+    
 
 
 
