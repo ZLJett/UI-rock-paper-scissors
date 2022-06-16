@@ -61,12 +61,16 @@ function setPlayerPic(picSrc) {
   playerCard.setAttribute("src", picSrc);
 }
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function setComputerPic(picSrc) {
   const computerCard = document.querySelector(".computer-selection");
   computerCard.setAttribute("src", picSrc);
 }
 
-function playGame() {
+async function playGame() {
   let playerScore = 0;
   let computerScore = 0;
   let currentRound = 1;
@@ -92,6 +96,7 @@ function playGame() {
     let playerPic = selectionPic(playerSelection);
     let computerPic = selectionPic(computerSelection);
     setPlayerPic(playerPic);
+    await delay(1500);
     setComputerPic(computerPic);
 
     // 1, display player pic
