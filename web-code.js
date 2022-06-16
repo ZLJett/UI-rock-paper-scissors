@@ -61,6 +61,10 @@ function setPlayerPic(picSrc) {
   playerCard.setAttribute("src", picSrc);
 }
 
+function setComputerPic(picSrc) {
+  const computerCard = document.querySelector(".computer-selection");
+  computerCard.setAttribute("src", picSrc);
+}
 
 function playGame() {
   let playerScore = 0;
@@ -88,6 +92,7 @@ function playGame() {
     let playerPic = selectionPic(playerSelection);
     let computerPic = selectionPic(computerSelection);
     setPlayerPic(playerPic);
+    setComputerPic(computerPic);
 
     // 1, display player pic
     // 2. display computer function (for delay)
