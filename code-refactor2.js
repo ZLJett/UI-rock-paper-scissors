@@ -33,14 +33,36 @@ function computerPlay() {
   return result;
 }
 
+function roundWinner(playerSelection, computerSelection) {
+  let resultMessage = "";
+  switch (true) {
+    case (playerSelection === computerSelection):
+      resultMessage = "tie";
+      break;
+    case (playerSelection === "rock" && computerSelection === "scissors"):
+      resultMessage = "player win";
+      break;
+    case (playerSelection === "paper" && computerSelection === "rock"):
+      resultMessage = "player win";
+      break;
+    case (playerSelection === "scissors" && computerSelection === "paper"):
+      resultMessage = "player win";
+      break;
+    default:
+      resultMessage = "computer win";
+  }
+  return resultMessage;
+}
+
 // Play round each time selection made and at end checks to see if game is won
 function playRound(event) {
   // disable input buttons while round is played
   inputButtons.forEach(button => button.classList.replace("styled", "greyout"));
   inputButtons.forEach(button => button.removeEventListener("click", playRound));
   // get player and computer selections
-  let playerSelection = event.target.textContent.toLowerCase()
-  let computerSelection = computerPlay()
+  let playerSelection = event.target.textContent.toLowerCase();
+  let computerSelection = computerPlay();
+  let roundResult = roundWinner(playerSelection, computerSelection);
 
 
 
