@@ -13,7 +13,15 @@ function delay(ms) {
 }
 
 // Play round each time selection made and at end checks to see if game is won
-function playRound (event) {
+function playRound(event) {
+  // disable input buttons while round is played
+  inputButtons.forEach(button => button.classList.replace("styled", "greyout"));
+  inputButtons.forEach(button => button.removeEventListener("click", playRound));
+  // get player and computer selections
+  let playerSelection = event.target.textContent.toLowerCase()
+  
+
+
 
 
 
@@ -26,7 +34,7 @@ function playRound (event) {
 // switch from "start game position" to "play round position"
 function startGame() {
   // deactivate "Start New Game" button
-  startButton.classList.replace("styled", "greyout")
+  startButton.classList.replace("styled", "greyout");
   startButton.removeEventListener("click", startGame);
   // switch to play round position
   roundCounter.textContent = currentRound;
