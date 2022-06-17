@@ -90,6 +90,21 @@ function updateScore(roundWinner) {
   }
 }
 
+// display game winner and switch from "play round position" to "start game position"
+function endGame() {
+  // display overall winner, delay, start position display message
+  // reset counters (score and round)
+  // remove pictures
+  // reset start button
+}
+
+function nextRound() {
+  // display to play round starting position
+  // update round counter (not score)
+  // remove pictures
+  // reset playRound listener/buttons
+}
+
 // Play round each time selection made and at end checks to see if game is won
 async function playRound(event) {
   // disable input buttons while round is played
@@ -109,14 +124,15 @@ async function playRound(event) {
   displayValue.textContent = roundWinner.toUpperCase() + "!";
   // update score counter and display
   updateScore(roundWinner);
+  // TO-DO add delay before check to give some time with result before any switches
 
-
-
-  // if either score === 5 alert(winner) and run endGame (which switches back "position")
-  // else leave state as is, but set display back to make selection
-  // and update round counter and reset buttons (nextRound function)
+  // check if a player has won the game
+  if (playerScore >= 5 || computerScore >= 5) {
+    endGame()
+  } else {
+    nextRound()
+  }
 }
-
 
 // switch from "start game position" to "play round position"
 function startGame() {
