@@ -54,6 +54,22 @@ function roundWinner(playerSelection, computerSelection) {
   return resultMessage;
 }
 
+function selectionPic(selection) {
+  let picSrc = "";
+  switch (selection) {
+    case "rock":
+      result = "./images/rock-usgs-unsplash.jpg";
+      break;
+    case "paper":
+      result = "./images/paper-david-maier-unsplash.jpg";
+      break;
+    case "scissors":
+      result = "./images/scissors-matt-artz-unsplash.jpg";
+      break;
+  }
+  return picSrc;
+}
+
 // Play round each time selection made and at end checks to see if game is won
 function playRound(event) {
   // disable input buttons while round is played
@@ -62,10 +78,14 @@ function playRound(event) {
   // get player and computer selections
   let playerSelection = event.target.textContent.toLowerCase();
   let computerSelection = computerPlay();
-  let roundResult = roundWinner(playerSelection, computerSelection);
+  let roundWinner = roundWinner(playerSelection, computerSelection);
+  // display player selection picture then computer selection picture after delay
+  let playerPic = selectionPic(playerSelection);
+  let computerPic = selectionPic(computerSelection);
 
 
 
+  // display winner message
 
 
   // if either score === 5 alert(winner) and run endGame (which switches back "position")
