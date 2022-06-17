@@ -80,6 +80,16 @@ function setComputerPic(picSrc) {
   computerCard.setAttribute("src", picSrc);
 }
 
+function updateScore(roundWinner) {
+  if (roundWinner === "player win") {
+    playerScore += 1;
+    playerScoreCard.textContent = playerScore;
+  } else if (roundWinner === "computer win") {
+    computerScore += 1;
+    computerScoreCard.textContent = computerScore;
+  }
+}
+
 // Play round each time selection made and at end checks to see if game is won
 async function playRound(event) {
   // disable input buttons while round is played
@@ -95,14 +105,16 @@ async function playRound(event) {
   setPlayerPic(playerPic);
   await delay(1500);
   setComputerPic(computerPic);
-
-
   // display winner message
+  displayValue.textContent = roundWinner.toUpperCase() + "!";
+  // update score counter and display
+  updateScore(roundWinner);
+
 
 
   // if either score === 5 alert(winner) and run endGame (which switches back "position")
   // else leave state as is, but set display back to make selection
-  // and update round counter (nextRound function)
+  // and update round counter and reset buttons (nextRound function)
 }
 
 
@@ -120,6 +132,8 @@ function startGame() {
 }
 
 const roundCounter = document.querySelector(".current-round");
+const playerScoreCard = document.querySelector(".player-score");
+const computerScoreCard = document.querySelector(".computer-score");
 const inputButtons = document.querySelectorAll(".pick-button");
 const displayValue = document.querySelector(".display-content");
 const startButton = document.querySelector(".game-button");
