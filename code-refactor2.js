@@ -8,10 +8,6 @@ let currentRound = 1;
 // 2. all game info counters start at 0
 // 3. all choice buttons start with greyout class
 
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 function getRndInteger() {
   return Math.floor(Math.random() * (3 - 0)) + 0;
 }
@@ -70,8 +66,22 @@ function selectionPic(selection) {
   return picSrc;
 }
 
+function setPlayerPic(picSrc) {
+  const playerCard = document.querySelector(".player-selection");
+  playerCard.setAttribute("src", picSrc);
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function setComputerPic(picSrc) {
+  const computerCard = document.querySelector(".computer-selection");
+  computerCard.setAttribute("src", picSrc);
+}
+
 // Play round each time selection made and at end checks to see if game is won
-function playRound(event) {
+async function playRound(event) {
   // disable input buttons while round is played
   inputButtons.forEach(button => button.classList.replace("styled", "greyout"));
   inputButtons.forEach(button => button.removeEventListener("click", playRound));
@@ -82,7 +92,9 @@ function playRound(event) {
   // display player selection picture then computer selection picture after delay
   let playerPic = selectionPic(playerSelection);
   let computerPic = selectionPic(computerSelection);
-
+  setPlayerPic(playerPic);
+  await delay(1500);
+  setComputerPic(computerPic);
 
 
   // display winner message
