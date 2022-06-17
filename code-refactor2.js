@@ -12,34 +12,32 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Play round each time selection made and at end checks to see if game is won
 function playRound (event) {
 
 
 
-  // if either score === 5 alert(winner) and run endGame
+  // if either score === 5 alert(winner) and run endGame (which switches back "position")
   // else leave state as is, but set display back to make selection
   // and update round counter (nextRound function)
 }
 
-function setUpGame() {
 
-
-}
-
+// switch from "start game position" to "play round position"
 function startGame() {
-  roundCounter.textContent = currentRound;
-  displayValue.textContent = "Make your Selection";
+  // deactivate "Start New Game" button
   startButton.classList.replace("styled", "greyout")
   startButton.removeEventListener("click", startGame);
+  // switch to play round position
+  roundCounter.textContent = currentRound;
+  displayValue.textContent = "Make your Selection";
   inputButtons.forEach(button => button.classList.replace("greyout", "styled"));
+  // a round will be played with each click, until game end conditions are met
   inputButtons.forEach(button => button.addEventListener("click", playRound));
 }
-
 
 const roundCounter = document.querySelector(".current-round");
 const inputButtons = document.querySelectorAll(".pick-button");
 const displayValue = document.querySelector(".display-content");
-
-// start game event switched to "play round position"
 const startButton = document.querySelector(".game-button");
 startButton.addEventListener("click", startGame);
