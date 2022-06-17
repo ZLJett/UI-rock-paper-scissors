@@ -12,6 +12,27 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function getRndInteger() {
+  return Math.floor(Math.random() * (3 - 0)) + 0;
+}
+
+function computerPlay() {
+  let choice = getRndInteger();
+  let result = "";
+  switch (choice) {
+    case 0:
+      result = "rock";
+      break;
+    case 1:
+      result = "paper";
+      break;
+    case 2:
+      result = "scissors";
+      break;
+  }
+  return result;
+}
+
 // Play round each time selection made and at end checks to see if game is won
 function playRound(event) {
   // disable input buttons while round is played
@@ -19,7 +40,7 @@ function playRound(event) {
   inputButtons.forEach(button => button.removeEventListener("click", playRound));
   // get player and computer selections
   let playerSelection = event.target.textContent.toLowerCase()
-  
+  let computerSelection = computerPlay()
 
 
 
