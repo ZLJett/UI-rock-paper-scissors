@@ -158,7 +158,7 @@ async function playRound(event) {
   // update score counter and display
   updateScore(winner);
   // delay so winner message sits for a little bit
-  await delay(1800);
+  await delay(2000);
   // check if a player has won the game
   if (playerScore >= 5 || computerScore >= 5) {
     endGame()
