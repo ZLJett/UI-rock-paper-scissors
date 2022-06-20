@@ -146,7 +146,7 @@ async function playRound(event) {
   // get player and computer selections
   let playerSelection = event.target.textContent.toLowerCase();
   let computerSelection = computerPlay();
-  let roundWinner = roundWinner(playerSelection, computerSelection);
+  let winner = roundWinner(playerSelection, computerSelection);
   // display player selection picture then computer selection picture after delay
   let playerPic = selectionPic(playerSelection);
   let computerPic = selectionPic(computerSelection);
@@ -154,9 +154,9 @@ async function playRound(event) {
   await delay(1500);
   setComputerPic(computerPic);
   // display winner message
-  displayValue.textContent = roundWinner.toUpperCase() + "!";
+  displayValue.textContent = winner.toUpperCase() + "!";
   // update score counter and display
-  updateScore(roundWinner);
+  updateScore(winner);
   // delay so winner message sits for a little bit
   await delay(4000);
   // check if a player has won the game
