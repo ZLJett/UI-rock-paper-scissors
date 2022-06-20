@@ -100,9 +100,16 @@ function endGame() {
 
 function nextRound() {
   // display to play round starting position
-  // update round counter (not score)
-  // remove pictures
-  // reset playRound listener/buttons
+  displayValue.textContent = "Make your Selection";
+  // update round counter to next round 
+  currentRound += 1;
+  roundCounter.textContent = currentRound;
+  // reset selection picture boxes to empty
+  setPlayerPic("");
+  setComputerPic("");
+  // reset playRound buttons and listener to continue play round loop
+  inputButtons.forEach(button => button.classList.replace("greyout", "styled"));
+  inputButtons.forEach(button => button.addEventListener("click", playRound));
 }
 
 // Play round each time selection made and at end checks to see if game is won
