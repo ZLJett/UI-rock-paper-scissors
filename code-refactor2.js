@@ -157,8 +157,8 @@ async function playRound(event) {
   displayValue.textContent = roundWinner.toUpperCase() + "!";
   // update score counter and display
   updateScore(roundWinner);
-  // TO-DO add delay before check to give some time with result before any switches
-
+  // delay so winner message sits for a little bit
+  await delay(4000);
   // check if a player has won the game
   if (playerScore >= 5 || computerScore >= 5) {
     endGame()
