@@ -101,12 +101,12 @@ function gameWinner() {
 }
 
 // display game winner and switch from "play round position" to "start game position"
-function endGame() {
-  // display overall winner, delay
+async function endGame() {
+  // display game winner
   let winnerMessage = gameWinner();
   displayValue.textContent = winnerMessage;
-  
-
+  // delay so winner message sits for a little bit
+  await delay(6000);
   // reset display to start game position
   displayValue.textContent = "Would you like to play?";
   // reset score and round counters and display to start game position
