@@ -90,11 +90,23 @@ function updateScore(roundWinner) {
   }
 }
 
+function gameWinner() {
+  let winnerMessage = "";
+  if (playerScore >= 5) {
+    winnerMessage = "The player wins the game!";
+  } else {
+    winnerMessage = "The computer wins the game!";
+  }
+  return winnerMessage.toUpperCase();
+}
+
 // display game winner and switch from "play round position" to "start game position"
 function endGame() {
   // display overall winner, delay
-
+  let winnerMessage = gameWinner();
+  displayValue.textContent = winnerMessage;
   
+
   // reset display to start game position
   displayValue.textContent = "Would you like to play?";
   // reset score and round counters and display to start game position
