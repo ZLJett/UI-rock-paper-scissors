@@ -115,7 +115,7 @@ async function endGame() {
   currentRound = 1;
   playerScoreCard.textContent = playerScore;
   computerScoreCard.textContent = computerScore;
-  roundCounter.textContent = currentRound;
+  roundCounter.textContent = 0;
   // reset selection picture boxes to empty
   setPlayerPic("");
   setComputerPic("");
