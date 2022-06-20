@@ -54,13 +54,13 @@ function selectionPic(selection) {
   let picSrc = "";
   switch (selection) {
     case "rock":
-      result = "./images/rock-usgs-unsplash.jpg";
+      picSrc = "./images/rock-usgs-unsplash.jpg";
       break;
     case "paper":
-      result = "./images/paper-david-maier-unsplash.jpg";
+      picSrc = "./images/paper-david-maier-unsplash.jpg";
       break;
     case "scissors":
-      result = "./images/scissors-matt-artz-unsplash.jpg";
+      picSrc = "./images/scissors-matt-artz-unsplash.jpg";
       break;
   }
   return picSrc;
@@ -151,14 +151,14 @@ async function playRound(event) {
   let playerPic = selectionPic(playerSelection);
   let computerPic = selectionPic(computerSelection);
   setPlayerPic(playerPic);
-  await delay(1500);
+  await delay(500);
   setComputerPic(computerPic);
   // display winner message
   displayValue.textContent = winner.toUpperCase() + "!";
   // update score counter and display
   updateScore(winner);
   // delay so winner message sits for a little bit
-  await delay(4000);
+  await delay(1800);
   // check if a player has won the game
   if (playerScore >= 5 || computerScore >= 5) {
     endGame()
