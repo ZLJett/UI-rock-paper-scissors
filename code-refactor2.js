@@ -92,16 +92,30 @@ function updateScore(roundWinner) {
 
 // display game winner and switch from "play round position" to "start game position"
 function endGame() {
-  // display overall winner, delay, start position display message
-  // reset counters (score and round)
-  // remove pictures
-  // reset start button
+  // display overall winner, delay
+
+  
+  // reset display to start game position
+  displayValue.textContent = "Would you like to play?";
+  // reset score and round counters and display to start game position
+  playerScore = 0;
+  computerScore = 0;
+  currentRound = 1;
+  playerScoreCard.textContent = playerScore;
+  computerScoreCard.textContent = computerScore;
+  roundCounter.textContent = currentRound;
+  // reset selection picture boxes to empty
+  setPlayerPic("");
+  setComputerPic("");
+  // reset start button and listener so new game can be played
+  startButton.classList.replace("greyout", "styled");
+  startButton.addEventListener("click", startGame);
 }
 
 function nextRound() {
   // display to play round starting position
   displayValue.textContent = "Make your Selection";
-  // update round counter to next round 
+  // update round counter to next round
   currentRound += 1;
   roundCounter.textContent = currentRound;
   // reset selection picture boxes to empty
